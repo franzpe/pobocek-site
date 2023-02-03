@@ -3,7 +3,3 @@ body {
 	min-height: 100vh;
 	height: 100%;
 }
-
-.dark .rect-text {
-	fill: rgb(var(--color-surface-800));
-}

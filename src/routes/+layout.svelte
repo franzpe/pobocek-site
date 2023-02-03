@@ -9,7 +9,7 @@
 	import Header from '../components/Header/Header.svelte';
 </script>
 
-<AppShell slotSidebarLeft="bg-surface-500/5 w-56 p-4">
+<AppShell slotPageContent="flex justify-center flex-col items-center">
 	<svelte:fragment slot="header"><Header /></svelte:fragment>
 	<slot />
 	<svelte:fragment slot="footer"><Footer /></svelte:fragment>
