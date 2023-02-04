@@ -43,6 +43,17 @@
 						</div>
 						<span class="unstyled align-bottom !font-normal">Halenárska 18A, 917 01 Trnava, Slovakia</span>
 					</div>
+					<div class="flex items-center space-x-4">
+						<div>
+							<i class="fa-solid fa-building text-2xl" />
+						</div>
+						<span class="unstyled align-bottom !font-normal">
+							Applance Solutions s.r.o. <br />
+							Garbiarska 51/53, 926 01 Sereď
+							<br />
+							SK2121057180 (VAT)
+						</span>
+					</div>
 				</div>
 				<div class="space-y-2">
 					<strong>Socials</strong>
@@ -65,6 +76,7 @@
 				</div>
 			</section>
 		</section>
+
 		<section class="flex-1">
 			<form class="space-y-4">
 				<h3>Work with me</h3>

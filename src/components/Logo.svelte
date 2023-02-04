@@ -4,7 +4,7 @@
 
 <svg
 	id="eHhyud21DZo1"
-	class="fill-token h-full w-48"
+	class="fill-token h-full w-44"
 	xmlns="http://www.w3.org/2000/svg"
 	xmlns:xlink="http://www.w3.org/1999/xlink"
 	viewBox="0 0 221.05 50.89"
