@@ -8,9 +8,3 @@
 	<svelte:fragment slot="lead"><HeaderLead /></svelte:fragment>
 	<svelte:fragment slot="trail"><HeaderTrail /></svelte:fragment>
 </AppBar>
-
-<style>
-	img {
-		color: rgba(var(--theme-font-color-base));
-	}
-</style>

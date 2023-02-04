@@ -8,7 +8,7 @@
 	const isOnline = hour > 8 && hour < 20;
 </script>
 
-<header class="px-4 py-10 md:py-20 flex flex-col items-center text-center">
+<header class="flex flex-col items-center text-center">
 	<div class="flex flex-col items-center mb-16">
 		<div class="avatar {isOnline ? 'online' : 'offline'}" class:dark={$storeLightSwitch}>
 			<img src="/avatar-transparent.png" alt="avatar" />

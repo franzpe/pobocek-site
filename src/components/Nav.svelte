@@ -1,13 +1,13 @@
 <nav>
 	<ul class="nav-list">
 		<li>
-			<a href="#about">Who am I?</a>
+			<a href="about">Who am I?</a>
 		</li>
 		<li>
-			<a href="#projects">Projects</a>
+			<a href="projects">Projects</a>
 		</li>
 		<li>
-			<a href="#contact">Contact</a>
+			<a href="blog">Blog</a>
 		</li>
 	</ul>
 </nav>

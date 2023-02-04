@@ -2,4 +2,6 @@
 	import Logo from '../ Logo.svelte';
 </script>
 
-<Logo />
+<a href="/">
+	<Logo />
+</a>
