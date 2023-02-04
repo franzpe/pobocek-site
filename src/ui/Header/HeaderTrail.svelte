@@ -21,7 +21,7 @@
 	>
 		<i class="fa-brands fa-linkedin" />
 	</a>
-	<a href="https://www.instagram.com/franzpeee/" target="_blank" rel="noreferrer" aria-label="instagram">
-		<i class="fa-brands fa-instagram" />
+	<a href="https://t.me/Franzpeee" target="_blank" rel="noreferrer" aria-label="instagram">
+		<i class="fa-brands fa-telegram" />
 	</a>
 </section>

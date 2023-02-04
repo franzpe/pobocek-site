@@ -53,7 +53,7 @@
 
 <style>
 	.avatar {
-		@apply bg-surface-300 w-32 h-32 rounded-full relative mb-6;
+		@apply bg-surface-200 w-32 h-32 rounded-full relative mb-6;
 	}
 
 	.avatar.online {

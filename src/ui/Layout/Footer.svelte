@@ -18,14 +18,9 @@
 				<i class="fa-brands fa-linkedin" />
 				<span class="hidden md:inline-block ml-2">Linkedin</span>
 			</a>
-			<a
-				class="btn bg-[#F56040] text-white"
-				href="https://www.instagram.com/franzpeee/"
-				target="_blank"
-				rel="noreferrer"
-			>
+			<a class="btn bg-[#2AABEE] text-white" href="https://t.me/Franzpeee" target="_blank" rel="noreferrer">
 				<i class="fa-brands fa-instagram" />
-				<span class="hidden md:inline-block ml-2">Instagram</span>
+				<span class="hidden md:inline-block ml-2">Telegram</span>
 			</a>
 			<a class="btn bg-gray-500 text-white" href="mailto:pobocekfrantisek@gmail.com">
 				<i class="fa-solid fa-mail-bulk" />

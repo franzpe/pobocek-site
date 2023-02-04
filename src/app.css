@@ -5,11 +5,11 @@ body {
 }
 
 .page-container {
-	@apply container max-w-[1200px] mx-auto space-y-8 md:space-y-12;
+	@apply container max-w-[1000px] mx-auto space-y-8 md:space-y-12;
 }
 
 .page-container-wide {
-	@apply container mx-auto space-y-8 md:space-y-12;
+	@apply container  max-w-[1200px] mx-auto space-y-8 md:space-y-12;
 }
 
 /* Label Text Override */
