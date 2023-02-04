@@ -1,7 +1,12 @@
 <script>
 	import { LightSwitch } from '@skeletonlabs/skeleton';
+	import Nav from '../Nav.svelte';
 </script>
 
+<Nav />
+<span class="divider-vertical h-5" />
+<a href="mailto:pobocekfrantisek@gmail.com">Get in touch</a>
+<span class="divider-vertical h-5" />
 <LightSwitch />
 <span class="divider-vertical h-5" />
 <section class="grid grid-cols-3 gap-6">

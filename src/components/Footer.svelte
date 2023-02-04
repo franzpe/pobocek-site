@@ -27,6 +27,10 @@
 				<i class="fa-brands fa-instagram" />
 				<span class="hidden md:inline-block ml-2">Instagram</span>
 			</a>
+			<a class="btn bg-gray-500 text-white" href="mailto:pobocekfrantisek@gmail.com">
+				<i class="fa-solid fa-mail-bulk" />
+				<span class="hidden md:inline-block ml-2">Email</span>
+			</a>
 		</div>
 	</section>
 </div>
