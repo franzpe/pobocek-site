@@ -1,6 +1,6 @@
 <script>
 	import { LightSwitch } from '@skeletonlabs/skeleton';
-	import Nav from '../Nav.svelte';
+	import Nav from '../Layout/Nav.svelte';
 </script>
 
 <Nav />

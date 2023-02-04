@@ -1,5 +1,18 @@
 html,
 body {
 	min-height: 100vh;
-	height: 100%;
+	@apply h-full overflow-hidden;
+}
+
+.page-container {
+	@apply container max-w-[1200px] mx-auto space-y-8 md:space-y-12;
+}
+
+.page-container-wide {
+	@apply container mx-auto space-y-8 md:space-y-12;
+}
+
+/* Label Text Override */
+label:not(.unstyled) span:first-of-type:not(.unstyled):is(:not(.input-chip *)) {
+	@apply text-surface-700-200-token text-sm;
 }
