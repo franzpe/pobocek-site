@@ -5,7 +5,7 @@ export async function getAbout(): Promise<any> {
 	const http = await fetch(`${baseUrl}/slug/${aboutSlug}`);
 	const res = await http.json();
 
-	if (http.ok) return res;
+	if (http.ok) return res.data;
 
 	throw new Error(res);
 }
