@@ -4,21 +4,20 @@
   "info": {
     "singularName": "post",
     "pluralName": "posts",
-    "displayName": "Post",
-    "description": ""
+    "displayName": "Post"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string"
     },
-    "Description": {
-      "type": "string"
+    "description": {
+      "type": "text"
     },
-    "Content": {
+    "content": {
       "type": "richtext"
     },
     "author": {
@@ -29,7 +28,7 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "Title"
+      "targetField": "title"
     }
   }
 }
