@@ -28,7 +28,7 @@
 	</div>
 	<h1 class="unstyled text-3xl md:text-5xl mb-4 !leading-tight">
 		Web development services <br />
-		and Web3 consultancy
+		& Web3 consultancy
 	</h1>
 	<div class="flex space-x-4 mt-12">
 		<a class="btn bg-[#6e5494] text-white" href="https://github.com/franzpe" target="_blank" rel="noreferrer">

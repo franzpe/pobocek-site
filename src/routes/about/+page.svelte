@@ -7,7 +7,9 @@
 	let content = marked(data.attributes.content);
 </script>
 
-<article class="page-container flex-1">
+<div class="page-container flex-1">
 	<h2>{data.attributes.title}</h2>
-	{@html content}
-</article>
+	<article>
+		{@html content}
+	</article>
+</div>

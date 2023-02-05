@@ -48,7 +48,7 @@
 							<i class="fa-solid fa-building text-2xl" />
 						</div>
 						<span class="unstyled align-bottom !font-normal">
-							Applance Solutions s.r.o. <br />
+							Applance Solutions Ltd. <br />
 							Garbiarska 51/53, 926 01 Sereď
 							<br />
 							SK2121057180 (VAT)
