@@ -52,6 +52,16 @@
       "type": "integer",
       "default": 5,
       "min": 0
+    },
+    "type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::post-type.post-type",
+      "inversedBy": "posts"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
