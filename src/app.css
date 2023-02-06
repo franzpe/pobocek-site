@@ -16,3 +16,23 @@ body {
 label:not(.unstyled) span:first-of-type:not(.unstyled):is(:not(.input-chip *)) {
 	@apply text-surface-700-200-token text-sm;
 }
+
+/* BLOG */
+.blog-html {
+	@apply space-y-8 mb-8;
+}
+
+.blog-html ul,
+.blog-html ol {
+	@apply space-y-4 list-inside;
+}
+.blog-html ul {
+	@apply list-disc;
+}
+.blog-html ol {
+	@apply list-decimal;
+}
+
+.blog-html figcaption {
+	@apply text-xs italic text-center mt-3;
+}

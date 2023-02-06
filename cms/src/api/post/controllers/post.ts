@@ -14,7 +14,7 @@ export default factories.createCoreController('api::post.post', ({ strapi }) => 
 		};
 
 		const post = await strapi.entityService.findMany('api::post.post', query);
-		const sanitizedEntity = await this.sanitizeOutput(post);
+		const sanitizedEntity = await this.sanitizeOutput(post, ctx);
 
 		return this.transformResponse(sanitizedEntity[0]);
 	}

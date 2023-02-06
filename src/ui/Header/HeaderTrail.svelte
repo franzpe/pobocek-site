@@ -5,7 +5,7 @@
 
 <Nav />
 <span class="divider-vertical h-5" />
-<a href="contact">Get in touch</a>
+<a href="/contact">Get in touch</a>
 <span class="divider-vertical h-5" />
 <LightSwitch />
 <span class="divider-vertical h-5" />

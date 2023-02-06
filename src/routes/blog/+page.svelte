@@ -27,14 +27,15 @@
 			<h1>The Blog</h1>
 			<p>Keep up with the latest news, tutorials and some other tech stories.</p>
 		</div>
-		<button class="btn !bg-orange-500" on:click={copyRSSToClipboard} on:keypress>
-			<i class="fa-solid fa-square-rss text-xl" />
-			&nbsp; FEED
+		<button class="btn " on:click={copyRSSToClipboard} on:keypress>
+			<i class="fa-solid fa-square-rss text-xl mr-2" />
+			RSS FEED
 		</button>
 	</header>
 
 	<hr />
-
+	Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia amet dignissimos totam voluptas ea consequuntur,
+	atque cupiditate veritatis doloribus? Culpa fuga quasi, perspiciatis omnis ea est asperiores itaque cum aliquid!
 	<section class="blog-list space-y-8">
 		{#each data.data as { attributes: post }}
 			<a
@@ -57,8 +58,14 @@
 						<p>{post.description}</p>
 						<div class="flex items-center space-x-4">
 							{#each post.tags.data as { attributes: tag }}
-								<span class="text-xs font-bold opacity-50 capitalize">{tag.name}</span>
+								<!-- <span class="text-xs font-bold opacity-50">
+									{tag.name}
+								</span> -->
+								<span class="chip !font-medium variant-glass-secondary">
+									{tag.name}
+								</span>
 							{/each}
+							<span class="text-xs opacity-50">{post.reading_time} min read</span>
 						</div>
 						<button class="btn variant-ghost-surface">Read Article &rarr;</button>
 					</div>
@@ -66,7 +73,7 @@
 			</a>
 		{/each}
 	</section>
-
+	<hr />
 	<footer class="flex justify-between items-center space-x-4">
 		<div>
 			<small class="opacity-50">Page {data.meta.pagination.page} of {data.meta.pagination.total}</small>

@@ -1,4 +1,13 @@
+import { ABOUT_SLUG, CMS_BASE_API_URL } from '$lib/http';
 import type { PageLoad } from './$types';
-import { getBlogList } from './blog-service';
 
-export const load = (() => getBlogList(1)) satisfies PageLoad;
+const baseUrl = CMS_BASE_API_URL + '/posts';
+
+export const load: PageLoad = async ({ fetch }) => {
+	const http = await fetch(`${baseUrl}?populate=tags,feature_img&filters[slug][$ne]=${ABOUT_SLUG}`);
+	const res = await http.json();
+
+	if (!http.ok) throw new Error(res);
+
+	return res;
+};

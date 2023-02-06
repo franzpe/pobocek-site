@@ -11,15 +11,6 @@ export async function getBlogList(page = 1): Promise<any> {
 	throw new Error(res);
 }
 
-export async function getBlogPost(slug: string): Promise<any> {
-	const http = await fetch(`${baseUrl}/slug/${slug}`);
-	const res = await http.json();
-
-	if (http.ok) return res.data;
-
-	throw new Error(res);
-}
-
 export function blogDateFormatter(date: string): string {
 	const options: Intl.DateTimeFormatOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
 	const d: Date = new Date(date);
