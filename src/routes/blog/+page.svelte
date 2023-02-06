@@ -34,8 +34,6 @@
 	</header>
 
 	<hr />
-	Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia amet dignissimos totam voluptas ea consequuntur,
-	atque cupiditate veritatis doloribus? Culpa fuga quasi, perspiciatis omnis ea est asperiores itaque cum aliquid!
 	<section class="blog-list space-y-8">
 		{#each data.data as { attributes: post }}
 			<a
