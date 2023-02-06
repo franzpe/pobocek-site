@@ -34,23 +34,20 @@
 </script>
 
 <div class="page-container flex-1">
-	<!-- Breadcrumbs -->
 	<ol class="breadcrumb">
 		<li class="crumb"><a href="/blog">Blog</a></li>
 		<li class="crumb-separator" aria-hidden>&rsaquo;</li>
 		<li>Article</li>
 	</ol>
-	<!-- Article -->
 	<article class="blog-post">
-		<!-- Header -->
 		<header class="space-y-4">
-			<!-- Timestamp / Read Time -->
 			<div class="blog-meta flex justify-between items-center">
 				<time class="block">{blogDateFormatter(data.attributes.updatedAt)}</time>
-				<span class="hidden md:block text-xs opacity-50">{data.attributes.reading_time} min read</span>
+				{#if data.attributes.reading_time}<span class="hidden md:block text-xs opacity-50">
+						{data.attributes.reading_time} min read
+					</span>{/if}
 			</div>
 			<h1>{data.attributes.title}</h1>
-			<!-- Byline -->
 			<div class="flex items-center space-x-4 py-4">
 				<Avatar src="/avatar-transparent.png" alt="Frank Pobocek avatar author" />
 				<div>
@@ -58,7 +55,6 @@
 					<a class="text-secondary-500 text-xs" href="https://twitter.com/franzpeo">@franzpeo</a>
 				</div>
 			</div>
-			<!-- Featured Image -->
 			{#if data.attributes.feature_img}
 				<img
 					src={CMS_BASE_URL + data.attributes.feature_img.data.attributes.url}
@@ -67,11 +63,8 @@
 				/>
 			{/if}
 		</header>
-		<!-- HTML Content -->
 		<div class="blog-html space-y-4">{@html content}</div>
-		<!-- Footer -->
 		<footer class="card p-4 variant-glass-surface flex justify-between items-center mb-28">
-			<!-- Tags -->
 			{#if data.attributes.tags}
 				<div class="flex items-center space-x-4">
 					{#each data.attributes.tags.data as { attributes: tag }}
@@ -79,7 +72,6 @@
 					{/each}
 				</div>
 			{/if}
-			<!-- Scroll to Top -->
 			<!-- prettier-ignore -->
 			<button class="btn variant-ghost-surface" on:click={()=>{scrollToTop()}}>Scroll to Top &uarr;</button>
 		</footer>

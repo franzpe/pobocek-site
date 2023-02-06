@@ -5,9 +5,9 @@
 
 <Nav />
 <span class="divider-vertical h-5" />
-<a href="/contact">Get in touch</a>
-<span class="divider-vertical h-5" />
 <LightSwitch />
+<span class="divider-vertical h-5" />
+<a href="/contact">Get in touch</a>
 <span class="divider-vertical h-5" />
 <section class="grid grid-cols-3 gap-6">
 	<a href="https://github.com/franzpe" target="_blank" rel="noreferrer" aria-label="Github">

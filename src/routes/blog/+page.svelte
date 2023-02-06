@@ -56,14 +56,11 @@
 						<p>{post.description}</p>
 						<div class="flex items-center space-x-4">
 							{#each post.tags.data as { attributes: tag }}
-								<!-- <span class="text-xs font-bold opacity-50">
-									{tag.name}
-								</span> -->
 								<span class="chip !font-medium variant-glass-secondary">
 									{tag.name}
 								</span>
 							{/each}
-							<span class="text-xs opacity-50">{post.reading_time} min read</span>
+							{#if post.reading_time}<span class="text-xs opacity-50">{post.reading_time} min read</span>{/if}
 						</div>
 						<button class="btn variant-ghost-surface">Read Article &rarr;</button>
 					</div>
@@ -71,12 +68,13 @@
 			</a>
 		{/each}
 	</section>
-	<hr />
-	<footer class="flex justify-between items-center space-x-4">
-		<div>
-			<small class="opacity-50">Page {data.meta.pagination.page} of {data.meta.pagination.total}</small>
-		</div>
-		{#if data.meta.pagination.total > 1}
+	{#if data.meta.pagination.total > 1}
+		<hr />
+		<footer class="flex justify-between items-center space-x-4">
+			<div>
+				<small class="opacity-50">Page {data.meta.pagination.page} of {data.meta.pagination.total}</small>
+			</div>
+
 			<div class="flex items-center space-x-4">
 				<button class="btn-icon variant-filled" on:click={onPrevPage} disabled={data.meta.pagination.page === 1}>
 					&larr;
@@ -89,6 +87,6 @@
 					Next &rarr;
 				</button>
 			</div>
-		{/if}
-	</footer>
+		</footer>
+	{/if}
 </div>

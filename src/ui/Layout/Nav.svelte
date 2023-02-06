@@ -4,7 +4,7 @@
 			<a href="/about">Who am I?</a>
 		</li>
 		<li>
-			<a href="/projects">Projects</a>
+			<a href="/work">Work</a>
 		</li>
 		<li>
 			<a href="/blog">Blog</a>

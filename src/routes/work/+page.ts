@@ -4,7 +4,7 @@ import type { PageLoad } from './$types';
 const baseUrl = CMS_BASE_API_URL + '/posts';
 
 export const load: PageLoad = async ({ fetch }) => {
-	const http = await fetch(`${baseUrl}?populate=tags,feature_img&filters[type][name][$eq]=blog`);
+	const http = await fetch(`${baseUrl}?populate=tags,feature_img&filters[type][name][$eq]=project`);
 	const res = await http.json();
 
 	if (!http.ok) throw new Error(res);
