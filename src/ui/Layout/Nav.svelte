@@ -1,4 +1,4 @@
-<nav>
+<nav class="relative hidden lg:block">
 	<ul class="nav-list">
 		<li>
 			<a href="/about">Who am I?</a>

@@ -1,13 +1,15 @@
 <script>
 	import { LightSwitch } from '@skeletonlabs/skeleton';
 	import Nav from '../Layout/Nav.svelte';
+
+	const hide = 'relative hidden md:block';
 </script>
 
 <Nav />
-<span class="divider-vertical h-5" />
+<span class="divider-vertical h-5 relative hidden lg:block" />
 <LightSwitch />
-<span class="divider-vertical h-5" />
-<a href="/contact">Get in touch</a>
+<span class="divider-vertical h-5 {hide}" />
+<a href="/contact" class={hide}>Get in touch</a>
 <span class="divider-vertical h-5" />
 <section class="grid grid-cols-3 gap-6">
 	<a href="https://github.com/franzpe" target="_blank" rel="noreferrer" aria-label="Github">

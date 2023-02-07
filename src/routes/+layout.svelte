@@ -5,15 +5,19 @@
 	import 'highlight.js/styles/github-dark.css';
 	import '../app.css';
 
-	import { AppShell } from '@skeletonlabs/skeleton';
+	import { AppShell, Toast } from '@skeletonlabs/skeleton';
 	import Header from '../ui/Header/Header.svelte';
 	import Footer from '../ui/Layout/Footer.svelte';
 	import { page } from '$app/stores';
+	import NavDrawer from '../ui/Layout/NavDrawer.svelte';
+
+	$: contentPadding = $page.url.pathname === '/' ? '' : 'px-4 py-8 md:py-12';
 </script>
 
-<AppShell
-	slotPageContent="flex justify-center flex-col items-center {$page.route.id !== '/' ? 'px-4 py-8 md:py-12' : ''}"
->
+<Toast />
+<NavDrawer />
+
+<AppShell slotPageContent="flex justify-center flex-col items-center {contentPadding}">
 	<svelte:fragment slot="header"><Header /></svelte:fragment>
 	<slot />
 	<svelte:fragment slot="pageFooter"><Footer /></svelte:fragment>
