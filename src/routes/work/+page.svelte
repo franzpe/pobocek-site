@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { CMS_BASE_URL } from '$lib/http';
-	import { blogDateFormatter } from '../blog/blog-service';
+	import { blogDateFormatter } from '../../ui/Blog/utils';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -20,7 +20,7 @@
 		{#each data.data as { attributes: post }}
 			<a
 				class="unstyled block hover:card p-4 rounded-container-token"
-				href="/blog/{post.slug}"
+				href="/work/{post.slug}"
 				data-sveltekit-preload-data="hover"
 			>
 				<article class="grid grid-cols-1 gap-4 lg:gap-8">

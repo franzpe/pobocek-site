@@ -7,9 +7,9 @@
 
 <div class="page-container flex-1">
 	<ol class="breadcrumb">
-		<li class="crumb"><a href="/blog">Blog</a></li>
+		<li class="crumb"><a href="/work">Work</a></li>
 		<li class="crumb-separator" aria-hidden>&rsaquo;</li>
-		<li>Article</li>
+		<li>Project</li>
 	</ol>
 	<BlogArticle {data} />
 </div>

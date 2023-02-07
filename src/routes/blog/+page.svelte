@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { CMS_BASE_URL } from '$lib/http';
 	import { toastStore, type ToastSettings } from '@skeletonlabs/skeleton';
+	import { blogDateFormatter } from '../../ui/Blog/utils';
 	import type { PageData } from './$types';
-	import { blogDateFormatter, getBlogList } from './blog-service';
+	import { getBlogList } from './blog-service';
 
 	export let data: PageData;
 
