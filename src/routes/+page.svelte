@@ -106,10 +106,10 @@
 			<footer class="card p-4 variant-glass-surface flex justify-start items-center mb-28 flex-0.5">
 				<!-- prettier-ignore -->
 				<div class="flex justify-center gap-4">
-				<a class="btn variant-ghost-surface" href="mailto:admin@skeleton.dev">
+				<a class="btn variant-ghost-surface" href="/work">
 					<span>See all</span>
 				</a>
-				<a class="btn variant-filled-primary" href="https://www.skeletonlabs.co/" target="_blank" rel="noreferrer">
+				<a class="btn variant-filled-primary" href="/contact" >
 					<span>Let's work together</span>
 					<span>&rarr;</span>
 				</a>
