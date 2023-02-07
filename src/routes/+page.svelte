@@ -65,7 +65,7 @@
 	</header>
 
 	<div class="px-4 py-10 md:py-20 space-y-20">
-		<section class="text-left space-y-6 max-w-[1200px] mx-auto">
+		<section class="text-center md:text-left space-y-6 max-w-[1200px] mx-auto">
 			<h2>My Recent Work</h2>
 			<section class="blog-list space-y-8">
 				{#each data.data as { attributes: project }}
@@ -74,7 +74,7 @@
 						href="/work/{project.slug}"
 						data-sveltekit-preload-data="hover"
 					>
-						<article class="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-4 lg:gap-8 text-left">
+						<article class="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-4 lg:gap-8 text-center md:text-left">
 							{#if project.feature_img}
 								<img
 									class="bg-black/50 w-full lg:max-w-sm aspect-video rounded-container-token shadow-xl bg-cover bg-center"
@@ -88,7 +88,7 @@
 								<time class="block">{blogDateFormatter(project.createdAt)}</time>
 								<p>{project.description}</p>
 								{#if project.tags.data.length !== 0}
-									<div class="flex items-center space-x-4">
+									<div class="flex items-center justify-center md:justify-start space-x-4">
 										{#each project.tags.data as { attributes: tag }}
 											<span class="chip !font-medium variant-glass-secondary">
 												{tag.name}
