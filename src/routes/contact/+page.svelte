@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+
+	import { enhance } from '$app/forms';
 	import type { ActionData } from './$types';
 
 	let services = [
@@ -113,7 +115,7 @@
 			</section>
 
 			<section class="flex-1">
-				<form method="POST" class="space-y-4">
+				<form method="POST" class="space-y-4" use:enhance>
 					<h3>Work with me</h3>
 					<p><b>Tell me more about yourself and what you've got in mind.</b></p>
 					<label class="input-label">
@@ -174,12 +176,14 @@
 		</div>
 	</div>
 {:else}
-	<h1 class="!leading-tight text-center">
+	<h1 class="!leading-tight text-center mb-8">
 		Take a cup of coffee,
 		<br />
 		and prepare for a ride
 		<i class="fa-solid fa-hands-clapping md:text-6xl text-amber-400" />
 	</h1>
+	<h4 class="mb-4">Meanwhile check out some of my cool blogs</h4>
+	<a href="/blog" class="btn variant-ghost-secondary">See recent blogs</a>
 {/if}
 
 <style></style>
