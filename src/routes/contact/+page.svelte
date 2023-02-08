@@ -1,12 +1,46 @@
 <script lang="ts">
-	let chips = new Array(4).fill(false);
-	$: chipStateClass = chips.map(c => (c ? 'variant-filled-secondary' : 'variant-ghost-secondary'));
+	import { onMount } from 'svelte';
+	import type { ActionData } from './$types';
+
+	let services = [
+		{ id: 1, name: 'Website / App development', active: false },
+		{ id: 2, name: 'Consultancy', active: false },
+		{ id: 3, name: 'Blockchain related', active: false },
+		{ id: 4, name: 'Other', active: false }
+	];
+
+	let servicesString = '';
+
+	export let form: ActionData;
 
 	function handleClick(idx: number) {
 		return function (e: any) {
-			chips[idx] = !chips[idx];
+			services[idx].active = !services[idx].active;
+			if (services[idx].active) {
+				servicesString += `,${services[idx].name}`;
+			} else {
+				servicesString = servicesString
+					.split(',')
+					.filter(f => f !== services[idx].name)
+					.join(',');
+			}
 		};
 	}
+
+	onMount(() => {
+		if (form?.errors) {
+			servicesString = form.data.services;
+
+			const slice = form.data.services.split(',');
+			slice.forEach(s => {
+				const idx = services.findIndex(ser => ser.name === s);
+
+				if (idx > -1) {
+					services[idx].active = true;
+				}
+			});
+		}
+	});
 </script>
 
 <div class="page-container flex-1">
@@ -78,36 +112,57 @@
 		</section>
 
 		<section class="flex-1">
-			<form class="space-y-4">
+			<form method="POST" class="space-y-4">
 				<h3>Work with me</h3>
 				<p><b>Tell me more about yourself and what you've got in mind.</b></p>
 				<label class="input-label">
-					<span>Your name</span>
-					<input type="text" id="name" class="input" placeholder="What should i call you?" />
+					<span>* Your name</span>
+					<input
+						type="text"
+						id="name"
+						name="name"
+						class="input"
+						placeholder="What should i call you?"
+						value={form?.data?.name || ''}
+					/>
+					{#if form?.errors?.name} <span class="inline-block text-error-500">{form.errors.name}</span> {/if}
 				</label>
 				<label class="input-label">
-					<span>Contact email or phone</span>
-					<input type="text" id="name" class="input" placeholder="How can i reach you?" />
+					<span>* Contact email or phone</span>
+					<input
+						type="text"
+						id="email"
+						name="email"
+						class="input"
+						placeholder="How can i reach you?"
+						value={form?.data?.email || ''}
+					/>
+					{#if form?.errors?.email} <span class="inline-block text-error-500">{form.errors.email}</span> {/if}
 				</label>
 				<label class="input-label">
-					<span>Your name</span>
-					<textarea id="name" class="input" placeholder="What would you like to build?" rows="4" />
+					<span>Message</span>
+					<textarea
+						id="body"
+						name="body"
+						class="input"
+						placeholder="What would you like to build?"
+						rows="4"
+						value={form?.data?.body || ''}
+					/>
 				</label>
 				<div class="input-label">
 					<strong>How can I help?</strong>
 					<div class="flex justify-start flex-wrap gap-2" aria-multiselectable="true">
-						<button class="chip !font-medium {chipStateClass[0]}" on:click={handleClick(0)}>
-							<span class="capitalize">Website / App development</span>
-						</button>
-						<button class="chip !font-medium {chipStateClass[1]}" on:click={handleClick(1)}>
-							<span class="capitalize">Consultancy</span>
-						</button>
-						<button class="chip !font-medium {chipStateClass[2]}" on:click={handleClick(2)}>
-							<span class="capitalize">Blockchain related</span>
-						</button>
-						<button class="chip !font-medium {chipStateClass[3]}" on:click={handleClick(3)}>
-							<span class="capitalize">Other</span>
-						</button>
+						<input name="services" value={servicesString} />
+						{#each services as service, i (service.id)}
+							<button
+								type="button"
+								class="chip !font-medium {service.active ? 'variant-filled-secondary' : 'variant-ghost-secondary'}"
+								on:click={handleClick(i)}
+							>
+								<span class="capitalize">{service.name}</span>
+							</button>
+						{/each}
 					</div>
 				</div>
 				<button class="btn variant-filled-primary btn-base !mt-8">Send message</button>
