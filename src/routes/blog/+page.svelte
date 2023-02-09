@@ -8,7 +8,7 @@
 	export let data: PageData;
 
 	function copyRSSToClipboard(): void {
-		navigator.clipboard.writeText('TODO LINK');
+		navigator.clipboard.writeText(`${window.location.origin}/blog/rss`);
 		const t: ToastSettings = { message: 'RSS feed copied to clipboard.' };
 		toastStore.trigger(t);
 	}

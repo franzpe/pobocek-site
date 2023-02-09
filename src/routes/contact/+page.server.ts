@@ -41,7 +41,7 @@ export const actions = {
 				to: import.meta.env.VITE_MAIL_TO,
 				subject: `Inquiry of - ${data.services.slice(1).split(',').join(', ')}`,
 				text: `Contact: ${data.email} \n ${data.body}`,
-				html: `<strong>Contact: ${data.email}</strong> <br /> ${data.body}`
+				html: `<strong>Contact: ${data.email}</strong> <br /><br /> ${data.body}`
 			});
 		} catch (err: any) {
 			return fail(400, err);
