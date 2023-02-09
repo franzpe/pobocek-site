@@ -7,6 +7,11 @@ export const actions = {
 	default: async ({ request }) => {
 		const formData = await request.formData();
 
+		// Spam field
+		if (formData.get('email2')) {
+			return fail(400, { err: 'Go away you freak' });
+		}
+
 		const data = {
 			name: String(formData.get('name')),
 			email: String(formData.get('email')),

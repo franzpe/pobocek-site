@@ -170,6 +170,10 @@
 							{/each}
 						</div>
 					</div>
+					<label class="hidden">
+						<span>email2</span>
+						<input type="text" id="email2" name="email2" class="input" />
+					</label>
 					<button class="btn variant-filled-primary btn-base !mt-8">Send message</button>
 				</form>
 			</section>
