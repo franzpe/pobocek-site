@@ -34,7 +34,7 @@
 			servicesString = form.data.services;
 
 			const slice = form.data.services.split(',');
-			slice.forEach(s => {
+			slice.forEach((s: any) => {
 				const idx = services.findIndex(ser => ser.name === s);
 
 				if (idx > -1) {

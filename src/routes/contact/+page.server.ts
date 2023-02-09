@@ -1,5 +1,7 @@
 import { fail } from '@sveltejs/kit';
+import sgMail from '@sendgrid/mail';
 import type { Actions } from './$types';
+import * as env from '$env/dynamic/private';
 
 export const actions = {
 	default: async ({ request }) => {
@@ -24,6 +26,20 @@ export const actions = {
 			}
 
 			return fail(400, { errors, data });
+		}
+
+		try {
+			sgMail.setApiKey(import.meta.env.VITE_SENDGRID_API_KEY);
+
+			await sgMail.send({
+				from: import.meta.env.VITE_MAIL_FROM,
+				to: import.meta.env.VITE_MAIL_TO,
+				subject: `Inquiry of - ${data.services.slice(1).split(',').join(', ')}`,
+				text: `Contact: ${data.email} \n ${data.body}`,
+				html: `<strong>Contact: ${data.email}</strong> <br /> ${data.body}`
+			});
+		} catch (err: any) {
+			return fail(400, err);
 		}
 
 		return { success: true };
