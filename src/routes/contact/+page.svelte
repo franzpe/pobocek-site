@@ -125,7 +125,7 @@
 							id="name"
 							name="name"
 							class="input"
-							placeholder="What should i call you?"
+							placeholder="What should I call you?"
 							value={form?.data?.name || ''}
 						/>
 						{#if form?.errors?.name} <span class="inline-block text-error-500">{form.errors.name}</span> {/if}
@@ -137,7 +137,7 @@
 							id="email"
 							name="email"
 							class="input"
-							placeholder="How can i reach you?"
+							placeholder="How can I reach you?"
 							value={form?.data?.email || ''}
 						/>
 						{#if form?.errors?.email} <span class="inline-block text-error-500">{form.errors.email}</span> {/if}

@@ -12,5 +12,5 @@ export const load: PageLoad = async ({ fetch, params }) => {
 		throw error(res.error.status, res.error);
 	}
 
-	throw new Error(res);
+	return res.data;
 };

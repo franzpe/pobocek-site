@@ -22,6 +22,15 @@ label:not(.unstyled) span:first-of-type:not(.unstyled):is(:not(.input-chip *)) {
 	@apply space-y-8 mb-8;
 }
 
+.blog-html h1,
+.blog-html h2,
+.blog-html h3,
+.blog-html h4,
+.blog-html h5,
+.blog-html h6 {
+	/* @apply !mb-10; */
+}
+
 .blog-html ul,
 .blog-html ol {
 	@apply space-y-4 list-inside;
@@ -35,4 +44,17 @@ label:not(.unstyled) span:first-of-type:not(.unstyled):is(:not(.input-chip *)) {
 
 .blog-html figcaption {
 	@apply text-xs italic text-center mt-3;
+}
+
+.blog-html p:not(.unstyled):is(:not(.prose *)),
+.blog-html li {
+	@apply text-lg;
+}
+
+.blog-html p img {
+	@apply mx-auto rounded-2xl;
+}
+
+.blog-html figure figcaption {
+	@apply text-sm mt-1;
 }
