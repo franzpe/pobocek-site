@@ -1,3 +1,4 @@
+import { error } from '@sveltejs/kit';
 import { CMS_BASE_API_URL } from '$lib/http';
 import type { PageLoad } from './$types';
 
@@ -9,7 +10,9 @@ export const load: PageLoad = async ({ fetch }) => {
 	);
 	const res = await http.json();
 
-	if (!http.ok) throw new Error(res);
+	if (res.error) {
+		throw error(res.error.status, res.error);
+	}
 
 	return res;
 };
