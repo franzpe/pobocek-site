@@ -44,6 +44,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@emailjs/browser": "^3.10.0",
 		"@fortawesome/fontawesome-free": "^6.2.1",
 		"@sendgrid/mail": "^7.7.0",
 		"@sveltejs/adapter-static": "^2.0.1",

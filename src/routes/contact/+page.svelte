@@ -1,8 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-
-	import { enhance } from '$app/forms';
-	import type { ActionData } from './$types';
+	import emailjs from '@emailjs/browser';
+	import { toastStore, type ToastSettings } from '@skeletonlabs/skeleton';
 
 	let services = [
 		{ id: 1, name: 'Website / App development', active: false },
@@ -11,41 +9,60 @@
 		{ id: 4, name: 'Other', active: false }
 	];
 
-	let servicesString = '';
+	let form = { data: { name: '', email: '', body: '' }, errors: { name: '', email: '' }, isSendingMail: false };
+	let email2 = '';
+	let isSuccess = false;
 
-	export let form: ActionData;
+	const handleClick = (idx: number) => (e: any) => {
+		services[idx].active = !services[idx].active;
+	};
 
-	function handleClick(idx: number) {
-		return function (e: any) {
-			services[idx].active = !services[idx].active;
-			if (services[idx].active) {
-				servicesString += `,${services[idx].name}`;
-			} else {
-				servicesString = servicesString
-					.split(',')
-					.filter(f => f !== services[idx].name)
-					.join(',');
-			}
-		};
-	}
+	const handleSubmit = async (e: SubmitEvent) => {
+		let errors: Record<keyof typeof form.errors, string> = { name: '', email: '' };
 
-	onMount(() => {
-		if (form?.errors) {
-			servicesString = form.data.services;
+		if (email2) return;
 
-			const slice = form.data.services.split(',');
-			slice.forEach((s: any) => {
-				const idx = services.findIndex(ser => ser.name === s);
-
-				if (idx > -1) {
-					services[idx].active = true;
-				}
-			});
+		if (!form.data.name) {
+			errors = { ...errors, name: 'Please fill in your name' };
 		}
-	});
+
+		if (!form.data.email) {
+			errors = { ...errors, email: 'Please fill in your email or phone number' };
+		}
+
+		form.errors = errors;
+
+		if (!form.data.name || !form.data.email) return;
+
+		form.isSendingMail = true;
+
+		try {
+			await emailjs.send(
+				import.meta.env.VITE_EMAIL_SERVICE,
+				import.meta.env.VITE_EMAIL_TEMPLATE,
+				{
+					...form.data,
+					services: services
+						.filter(s => s.active)
+						.map(s => s.name)
+						.join(', ')
+				},
+				import.meta.env.VITE_EMAIL_PUBLIC_KEY
+			);
+
+			isSuccess = true;
+		} catch (err) {
+			const t: ToastSettings = {
+				message: 'Oops! Email service is currently down. Please conact me directly via email.'
+			};
+			toastStore.trigger(t);
+		} finally {
+			form.isSendingMail = false;
+		}
+	};
 </script>
 
-{#if !form?.success}
+{#if !isSuccess}
 	<div class="page-container flex-1">
 		<h1 class="!leading-tight text-center">
 			Love to hear from you,
@@ -115,7 +132,7 @@
 			</section>
 
 			<section class="flex-1">
-				<form method="POST" class="space-y-4" use:enhance>
+				<form class="space-y-4" on:submit|preventDefault={handleSubmit}>
 					<h3>Work with me</h3>
 					<p><b>Tell me more about yourself and what you've got in mind.</b></p>
 					<label class="input-label">
@@ -126,9 +143,9 @@
 							name="name"
 							class="input"
 							placeholder="What should I call you?"
-							value={form?.data?.name || ''}
+							bind:value={form.data.name}
 						/>
-						{#if form?.errors?.name} <span class="inline-block text-error-500">{form.errors.name}</span> {/if}
+						{#if form.errors.name} <span class="inline-block text-error-500">{form.errors.name}</span> {/if}
 					</label>
 					<label class="input-label">
 						<span>* Contact email or phone</span>
@@ -138,9 +155,9 @@
 							name="email"
 							class="input"
 							placeholder="How can I reach you?"
-							value={form?.data?.email || ''}
+							bind:value={form.data.email}
 						/>
-						{#if form?.errors?.email} <span class="inline-block text-error-500">{form.errors.email}</span> {/if}
+						{#if form.errors.email} <span class="inline-block text-error-500">{form.errors.email}</span> {/if}
 					</label>
 					<label class="input-label">
 						<span>Message</span>
@@ -150,13 +167,12 @@
 							class="input"
 							placeholder="What would you like to build?"
 							rows="4"
-							value={form?.data?.body || ''}
+							bind:value={form.data.body}
 						/>
 					</label>
 					<div class="input-label">
 						<strong>How can I help?</strong>
 						<div class="flex justify-start flex-wrap gap-2" aria-multiselectable="true">
-							<input name="services" value={servicesString} class="hidden" />
 							{#each services as service, i (service.id)}
 								<button
 									type="button"
@@ -172,9 +188,11 @@
 					</div>
 					<label class="hidden">
 						<span>email2</span>
-						<input type="text" id="email2" name="email2" class="input" />
+						<input type="text" id="email2" name="email2" class="input" bind:value={email2} />
 					</label>
-					<button class="btn variant-filled-primary btn-base !mt-8">Send message</button>
+					<button disabled={form.isSendingMail} class="btn variant-filled-primary btn-base !mt-8">
+						Send message
+					</button>
 				</form>
 			</section>
 		</div>
