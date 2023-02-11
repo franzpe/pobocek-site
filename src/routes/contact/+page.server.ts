@@ -3,6 +3,8 @@ import sgMail from '@sendgrid/mail';
 import type { Actions } from './$types';
 import * as env from '$env/dynamic/private';
 
+export const prerender = false;
+
 export const actions = {
 	default: async ({ request }) => {
 		const formData = await request.formData();

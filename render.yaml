@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: sveltekit-static
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    autoDeploy: false
+    buildFilter:
+      paths:
+      - "**/*.ts"
+      ignorePaths:
+      - "**/*.md"
+      - "**/*.test.ts"
+
+

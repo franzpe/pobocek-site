@@ -4,10 +4,8 @@
 	import { Avatar, storeLightSwitch } from '@skeletonlabs/skeleton';
 	import MarkerSvg from '../components/MarkerSvg.svelte';
 	import type { PageData } from './$types';
-	import { each } from 'svelte/internal';
 	import { CMS_BASE_URL } from '$lib/http';
 	import { blogDateFormatter } from '../ui/Blog/utils';
-	import scrollToTop from '$lib/scrollToTop';
 
 	const hour = new Date().getUTCHours();
 	const currentDateString = new Date().toLocaleString(undefined, { dateStyle: 'full', timeStyle: 'short' });
