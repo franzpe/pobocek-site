@@ -8,6 +8,7 @@ services:
     buildFilter:
       paths:
       - "**/*.ts"
+      - "**/*.js"
       ignorePaths:
       - "**/*.md"
       - "**/*.test.ts"
