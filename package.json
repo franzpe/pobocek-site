@@ -44,7 +44,7 @@
 	},
 	"type": "module",
 	"engines": {
-		"node": ">=14 <15"
+		"node": "16.14.2"
 	},
 	"dependencies": {
 		"@emailjs/browser": "^3.10.0",
