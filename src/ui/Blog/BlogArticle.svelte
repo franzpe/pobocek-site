@@ -16,7 +16,7 @@
 
 <article class="blog-post">
 	<header class="space-y-4">
-		<div class="blog-meta">
+		<div class="blog-meta flex justify-between items-center">
 			<time class="block">{blogDateFormatter(data.attributes.updatedAt)}</time>
 			{#if data.attributes.reading_time}<span class="hidden md:block text-xs opacity-50">
 					{data.attributes.reading_time} min read

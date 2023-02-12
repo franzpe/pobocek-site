@@ -16,17 +16,17 @@
 		</blockquote>
 	</header>
 	<hr />
-	<section class="grid gap-4 md:gap-12 md:grid-cols-2">
+	<section class="blog-list space-y-8">
 		{#each data.data as { attributes: post }}
 			<a
 				class="unstyled block hover:card p-4 rounded-container-token"
 				href="/work/{post.slug}"
 				data-sveltekit-preload-data="hover"
 			>
-				<article class="grid grid-cols-1 gap-4 lg:gap-8">
+				<article class="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-4 lg:gap-8">
 					{#if post.feature_img.data !== null}
 						<img
-							class="bg-black/50 w-full aspect-video rounded-container-token shadow-xl bg-cover bg-center"
+							class="bg-black/50 w-full lg:max-w-sm aspect-video rounded-container-token shadow-xl bg-cover bg-center"
 							src={CMS_IMG_BASE_URL + post.feature_img.data.attributes.url}
 							alt="thumbnail"
 						/>
