@@ -14,6 +14,11 @@
 	$: contentPadding = $page.url.pathname === '/' ? '' : 'px-4 py-8 md:py-12';
 </script>
 
+<svelte:head>
+	<!-- Prevent from crawling bots -->
+	<meta name="robots" content="noindex, nofollow" />
+</svelte:head>
+
 <Toast />
 <NavDrawer />
 
