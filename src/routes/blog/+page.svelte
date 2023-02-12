@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { CMS_BASE_URL } from '$lib/http';
+	import { CMS_IMG_BASE_URL } from '$lib/http';
 	import { toastStore, type ToastSettings } from '@skeletonlabs/skeleton';
 	import { blogDateFormatter } from '../../ui/Blog/utils';
 	import type { PageData } from './$types';
@@ -46,7 +46,7 @@
 					{#if post.feature_img}
 						<img
 							class="bg-black/50 w-full lg:max-w-sm aspect-video rounded-container-token shadow-xl bg-cover bg-center"
-							src={CMS_BASE_URL + post.feature_img.data.attributes.url}
+							src={CMS_IMG_BASE_URL + post.feature_img.data.attributes.url}
 							alt="thumbnail"
 						/>
 					{/if}

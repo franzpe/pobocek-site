@@ -1,13 +1,16 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import { marked } from 'marked';
-	import { CMS_BASE_URL } from '$lib/http';
+	import { CMS_IMG_BASE_URL } from '$lib/http';
 	import scrollToTop from '$lib/scrollToTop';
 
 	export let data: PageData;
 
 	let content = marked(data.attributes.content);
-	content = content.replaceAll('/uploads', `${CMS_BASE_URL}/uploads`);
+
+	if (import.meta.env.DEV) {
+		content = content.replaceAll('/uploads', `${CMS_IMG_BASE_URL}/uploads`);
+	}
 </script>
 
 <div class="page-container flex-1">

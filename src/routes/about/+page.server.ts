@@ -1,10 +1,10 @@
 import { ABOUT_SLUG, CMS_BASE_API_URL } from '$lib/http';
 import { error } from '@sveltejs/kit';
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 
 const baseUrl = CMS_BASE_API_URL + '/posts';
 
-export const load: PageLoad = async ({ fetch }) => {
+export const load: PageServerLoad = async ({ fetch }) => {
 	const http = await fetch(`${baseUrl}/slug/${ABOUT_SLUG}`);
 	const res = await http.json();
 

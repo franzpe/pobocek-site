@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { marked } from 'marked';
 
-	import { CMS_BASE_URL } from '$lib/http';
+	import { CMS_IMG_BASE_URL } from '$lib/http';
 	import scrollToTop from '$lib/scrollToTop';
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import { blogDateFormatter } from './utils';
@@ -33,7 +33,7 @@
 
 		{#if data.attributes.feature_img}
 			<img
-				src={CMS_BASE_URL + data.attributes.feature_img.data.attributes.url}
+				src={CMS_IMG_BASE_URL + data.attributes.feature_img.data.attributes.url}
 				alt={data.attributes.title}
 				class="w-full aspect-video rounded-container-token shadow-xl"
 			/>

@@ -1,10 +1,10 @@
 import { error } from '@sveltejs/kit';
 import { CMS_BASE_API_URL } from '$lib/http';
-import type { PageLoad } from './$types';
+import type { PageServerLoad } from './$types';
 
 const baseUrl = CMS_BASE_API_URL + '/posts';
 
-export const load: PageLoad = async ({ fetch }) => {
+export const load: PageServerLoad = async ({ fetch }) => {
 	const http = await fetch(
 		`${baseUrl}?populate=tags,feature_img&filters[type][name][$eq]=project&filters[featured][$eq]=true`
 	);
