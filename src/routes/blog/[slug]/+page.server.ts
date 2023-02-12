@@ -7,6 +7,7 @@ const baseUrl = CMS_BASE_API_URL + '/posts';
 
 export const load: PageServerLoad = async ({ fetch, params }) => {
 	const http = await fetch(`${baseUrl}/slug/${params.slug}?populate=*`);
+
 	const res = await http.json();
 
 	if (res.error) {

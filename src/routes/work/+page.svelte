@@ -24,7 +24,7 @@
 				data-sveltekit-preload-data="hover"
 			>
 				<article class="grid grid-cols-1 gap-4 lg:gap-8">
-					{#if post.feature_img}
+					{#if post.feature_img.data !== null}
 						<img
 							class="bg-black/50 w-full aspect-video rounded-container-token shadow-xl bg-cover bg-center"
 							src={CMS_IMG_BASE_URL + post.feature_img.data.attributes.url}
