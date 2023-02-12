@@ -15,8 +15,6 @@
 	export let data: PageData;
 </script>
 
-<SEO title="Pobocek | Home" description="Frank Pobocek personal website" />
-
 <div class="w-full">
 	<header class="variant-glass-surface border-b border-black/5 dark:border-white/5 px-4 py-10 md:py-20">
 		<div

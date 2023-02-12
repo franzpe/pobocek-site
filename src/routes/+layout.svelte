@@ -10,15 +10,12 @@
 	import Footer from '../ui/Layout/Footer.svelte';
 	import { page } from '$app/stores';
 	import NavDrawer from '../ui/Layout/NavDrawer.svelte';
+	import Seo from '../components/SEO.svelte';
 
 	$: contentPadding = $page.url.pathname === '/' ? '' : 'px-4 py-8 md:py-12';
 </script>
 
-<svelte:head>
-	<!-- Prevent from crawling bots -->
-	<meta name="robots" content="noindex, nofollow" />
-</svelte:head>
-
+<Seo />
 <Toast />
 <NavDrawer />
 
