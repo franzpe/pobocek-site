@@ -7,12 +7,6 @@
 
 	export let data: PageData;
 
-	function copyRSSToClipboard(): void {
-		navigator.clipboard.writeText(`${window.location.origin}/blog/rss`);
-		const t: ToastSettings = { message: 'RSS feed copied to clipboard.' };
-		toastStore.trigger(t);
-	}
-
 	function onPrevPage(): void {
 		getBlogList(data.meta.pagination.page - 1).then(res => (data = res));
 	}
@@ -28,10 +22,10 @@
 			<h1>The Blog</h1>
 			<p>Keep up with the latest news, tutorials and some other tech stories.</p>
 		</div>
-		<button class="btn " on:click={copyRSSToClipboard} on:keypress>
+		<a href="/blog/rss" class="btn" on:keypress>
 			<i class="fa-solid fa-square-rss text-xl mr-2" />
 			RSS FEED
-		</button>
+		</a>
 	</header>
 
 	<hr />
