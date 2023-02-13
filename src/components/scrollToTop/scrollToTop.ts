@@ -1,5 +1,3 @@
-import { onMount } from 'svelte';
-
 const scrollToTop = () => {
 	let elemPage: HTMLElement | null;
 

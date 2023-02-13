@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { afterNavigate, preloadData } from '$app/navigation';
-	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
+	import { afterNavigate } from '$app/navigation';
 	import scrollToTop from './scrollToTop';
 
 	afterNavigate(() => {

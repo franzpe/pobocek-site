@@ -16,6 +16,12 @@
 			<nav class="list-nav">
 				<ul>
 					<li on:click={onListItemClick} on:keypress>
+						<a href="/" class={classesActive('/')} data-sveltekit-preload-data="hover">
+							<span class="fa-solid fa-house text-lg w-10" />
+							Home
+						</a>
+					</li>
+					<li on:click={onListItemClick} on:keypress>
 						<a href="/about" class={classesActive('/about')} data-sveltekit-preload-data="hover">
 							<span class="fa-solid fa-user text-lg w-10" />
 							Who am I?
