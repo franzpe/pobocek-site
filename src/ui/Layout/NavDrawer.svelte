@@ -6,7 +6,13 @@
 		drawerStore.close();
 	};
 
-	$: classesActive = (href: string) => ($page.url.pathname?.includes(href) ? 'bg-primary-active-token' : '');
+	$: classesActive = (href: string) => {
+		if (href === '/') {
+			return $page.url.pathname === '/' ? 'bg-primary-active-token' : '';
+		}
+
+		return $page.url.pathname?.includes(href) ? 'bg-primary-active-token' : '';
+	};
 </script>
 
 <Drawer>
