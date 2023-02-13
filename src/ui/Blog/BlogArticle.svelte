@@ -2,7 +2,7 @@
 	import { marked } from 'marked';
 
 	import { CMS_IMG_BASE_URL } from '$lib/http';
-	import scrollToTop from '$lib/scrollToTop';
+	import scrollToTop from '../../components/scrollToTop/scrollToTop';
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import { blogDateFormatter } from './utils';
 	import highlightContent from '$lib/ highlightContent';

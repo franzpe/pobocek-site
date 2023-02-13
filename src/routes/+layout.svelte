@@ -11,6 +11,7 @@
 	import { page } from '$app/stores';
 	import NavDrawer from '../ui/Layout/NavDrawer.svelte';
 	import Seo from '../components/SEO.svelte';
+	import ScrollToTop from '../components/scrollToTop/ScrollToTop.svelte';
 
 	$: contentPadding = $page.url.pathname === '/' ? '' : 'px-4 py-8 md:py-12';
 </script>
@@ -18,6 +19,7 @@
 <Seo />
 <Toast />
 <NavDrawer />
+<ScrollToTop />
 
 <AppShell slotPageContent="flex justify-center flex-col items-center {contentPadding}">
 	<svelte:fragment slot="header"><Header /></svelte:fragment>

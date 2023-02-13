@@ -52,7 +52,7 @@
 					<i class="fa-brands fa-linkedin" />
 					<span class="hidden md:inline-block ml-2">Linkedin</span>
 				</a>
-				<a class="btn bg-gray-500 text-white" href="mailto:pobocekfrantisek@gmail.com">
+				<a class="btn bg-gray-500 text-white" href="mailto:frank@pobocek.dev">
 					<i class="fa-solid fa-mail-bulk" />
 					<span class="hidden md:inline-block ml-2">Email</span>
 				</a>

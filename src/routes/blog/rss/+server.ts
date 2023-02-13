@@ -32,6 +32,7 @@ export const GET = (async ({ fetch }) => {
 	// 		'Content-Type': 'application/xml'
 	// 	}
 	// });
+
 	return new Response('wow', {
 		headers: {
 			'Content-Type': 'application/xml'

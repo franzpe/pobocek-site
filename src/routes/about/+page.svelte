@@ -2,7 +2,7 @@
 	import type { PageData } from './$types';
 	import { marked } from 'marked';
 	import { CMS_IMG_BASE_URL } from '$lib/http';
-	import scrollToTop from '$lib/scrollToTop';
+	import scrollToTop from '../../components/scrollToTop/scrollToTop';
 
 	export let data: PageData;
 

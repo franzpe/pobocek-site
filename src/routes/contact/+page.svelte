@@ -81,9 +81,7 @@
 							<div>
 								<i class="fa-solid fa-mail-bulk text-2xl" />
 							</div>
-							<a href="mailto:pobocekfrantisek@gmail.com" class="unstyled align-bottom !font-normal">
-								pobocekfrantisek@gmail.com
-							</a>
+							<a href="mailto:frank@pobocek.dev" class="unstyled align-bottom !font-normal">frank@pobocek.dev</a>
 						</div>
 						<div class="flex items-center space-x-4">
 							<div>
