@@ -28,8 +28,8 @@
 			font-weight="400"
 			transform="translate(181.725035 177.290069)"
 			stroke-width="0"
-			class="rect-text"
 			fill="rgb(var(--color-surface-100))"
+			class="rect-text"
 			class:dark-rect-text={$storeLightSwitch}
 		>
 			.dev

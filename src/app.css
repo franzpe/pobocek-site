@@ -45,11 +45,6 @@ label:not(.unstyled) span:first-of-type:not(.unstyled):is(:not(.input-chip *)) {
 	@apply text-xs italic text-center mt-3;
 }
 
-.blog-html p:not(.unstyled):is(:not(.prose *)),
-.blog-html li {
-	@apply text-lg;
-}
-
 .blog-html p img {
 	@apply mx-auto rounded-2xl;
 }
