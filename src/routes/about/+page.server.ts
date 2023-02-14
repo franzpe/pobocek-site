@@ -5,7 +5,7 @@ import type { PageServerLoad } from './$types';
 const baseUrl = CMS_BASE_API_URL + '/posts';
 
 export const load: PageServerLoad = async ({ fetch }) => {
-	const http = await fetch(`${baseUrl}/slug/${ABOUT_SLUG}`);
+	const http = await fetch(`${baseUrl}/slug/${ABOUT_SLUG}?populate=*`);
 	const res = await http.json();
 
 	if (res.error) {

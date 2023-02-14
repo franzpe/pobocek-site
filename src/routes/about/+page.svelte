@@ -20,6 +20,15 @@
 	</header>
 	<hr />
 	<article class="blog-post">
+		{#if data.attributes.feature_img.data !== null}
+			<div class="flex justify-center mb-8">
+				<img
+					class="bg-black/50 rounded-container-token shadow-xl lg:w-full"
+					src={CMS_IMG_BASE_URL + data.attributes.feature_img.data.attributes.url}
+					alt="thumbnail"
+				/>
+			</div>
+		{/if}
 		<div class="blog-html space-y-4">{@html content}</div>
 		<footer class="card p-4 variant-glass-surface flex justify-between items-center mb-28">
 			<p>
