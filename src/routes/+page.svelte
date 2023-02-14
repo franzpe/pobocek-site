@@ -19,7 +19,7 @@
 			class="flex flex-col items-center text-center min-h-[600px] md:min-h-[700px] justify-center pb-8 md:pb-12 space-y-14"
 		>
 			<div class="flex flex-col items-center mb-2">
-				<div class="avatar {isOnline ? 'online' : 'offline'} " class:dark={$storeLightSwitch}>
+				<div class="avatar {isOnline ? 'online' : 'offline'} dark:!bg-surface-900">
 					<img src="/avatar-transparent.png" alt="avatar" />
 					<span class="status " />
 					<span class="status ping" />
@@ -115,7 +115,7 @@
 
 <style>
 	.ping {
-		animation: ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite 1s;
+		animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite 1s;
 	}
 
 	@keyframes ping {
@@ -138,20 +138,18 @@
 		box-shadow: 0 0 20px rgb(239 68 68 / var(--tw-bg-opacity));
 	}
 
-	.dark {
-		@apply bg-surface-900;
-	}
-
 	.status {
 		@apply inline-block rounded-full w-4 h-4 absolute top-2 right-3.5;
 	}
 
 	.online span {
 		@apply bg-emerald-500;
+		/* box-shadow: 0 0 8px hsla(241, 100%, 100%); */
 	}
 
 	.offline span {
 		@apply bg-red-500;
+		/* box-shadow: 0 0 8px hsla(241, 100%, 100%); */
 	}
 
 	.status-text {

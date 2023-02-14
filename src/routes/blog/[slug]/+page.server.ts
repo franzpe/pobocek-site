@@ -3,6 +3,9 @@ import { error } from '@sveltejs/kit';
 import type { PageServerLoad } from './$types';
 import { CMS_BASE_API_URL } from '$lib/http';
 
+// Prerender when blog pushed
+export const prerender = false;
+
 const baseUrl = CMS_BASE_API_URL + '/posts';
 
 export const load: PageServerLoad = async ({ fetch, params }) => {
