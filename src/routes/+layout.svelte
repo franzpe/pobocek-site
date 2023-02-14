@@ -12,6 +12,7 @@
 	import NavDrawer from '../ui/Layout/NavDrawer.svelte';
 	import Seo from '../components/SEO.svelte';
 	import ScrollToTop from '../components/scrollToTop/ScrollToTop.svelte';
+	import PageTransition from '../components/PageTransition.svelte';
 
 	$: contentPadding = $page.url.pathname === '/' ? '' : 'px-4 py-8 md:py-12';
 </script>
@@ -21,8 +22,10 @@
 <NavDrawer />
 <ScrollToTop />
 
-<AppShell slotPageContent="flex justify-center flex-col items-center {contentPadding}">
+<AppShell>
 	<svelte:fragment slot="header"><Header /></svelte:fragment>
-	<slot />
+	<PageTransition url={$page.url}>
+		<slot />
+	</PageTransition>
 	<svelte:fragment slot="pageFooter"><Footer /></svelte:fragment>
 </AppShell>
