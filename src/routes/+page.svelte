@@ -1,7 +1,5 @@
 <script lang="ts">
-	import SEO from '../components/SEO.svelte';
-
-	import { Avatar, storeLightSwitch } from '@skeletonlabs/skeleton';
+	import { storeLightSwitch } from '@skeletonlabs/skeleton';
 	import MarkerSvg from '../components/MarkerSvg.svelte';
 	import type { PageData } from './$types';
 	import { CMS_IMG_BASE_URL } from '$lib/http';
@@ -117,7 +115,7 @@
 
 <style>
 	.ping {
-		animation: ping 3s cubic-bezier(0, 0, 0.2, 1) infinite 1s;
+		animation: ping 2.5s cubic-bezier(0, 0, 0.2, 1) infinite 1s;
 	}
 
 	@keyframes ping {
@@ -150,12 +148,10 @@
 
 	.online span {
 		@apply bg-emerald-500;
-		/* box-shadow: 0 0 8px hsla(241, 100%, 100%); */
 	}
 
 	.offline span {
 		@apply bg-red-500;
-		/* box-shadow: 0 0 8px hsla(241, 100%, 100%); */
 	}
 
 	.status-text {
