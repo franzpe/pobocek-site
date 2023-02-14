@@ -4,7 +4,7 @@
 	const metaDefaults = {
 		title: 'Pobocek - Web Development & Web3 Consultancy',
 		description:
-			'Frank Pobocek is experienced full stack web developer with an overlap of web3 blockchain (smart contracts) development',
+			'Frank Pobocek is experienced full stack web developer with an overlap of web3 blockchain development (smart contracts).',
 		image: 'https://pobocek.dev/avatar_circle_dark.png'
 	};
 
@@ -59,15 +59,13 @@
 </script>
 
 <svelte:head>
-	<!-- Prevent from crawling bots -->
-	<meta name="robots" content="noindex, nofollow" />
 	<!-- Meta Tags -->
 	<title>{title}</title>
 	<meta name="title" content={title} />
 	<meta name="description" content={description} />
 	<meta
 		name="keywords"
-		content="web development, web app, programming, freelance, web3, blockchain, smart contracts"
+		content="web development, web app, programming, freelance, web3, blockchain, smart contracts, ethereum, soroban, stellar"
 	/>
 	<meta name="author" content="Frank Pobocek" />
 	<!-- Open Graph - https://ogp.me/ -->
