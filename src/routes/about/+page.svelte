@@ -16,14 +16,14 @@
 <div class="page-container flex-1">
 	<header class="space-y-4 justify-between items-center">
 		<h1>{data.attributes.title}</h1>
-		<p>Learn about my coding jurney and take a sneak peak at my life.</p>
+		<p class="font-medium">{data.attributes.description}</p>
 	</header>
 	<hr />
 	<article class="blog-post">
 		{#if data.attributes.feature_img.data !== null}
 			<div class="flex justify-center mb-8">
 				<img
-					class="bg-black/50 rounded-container-token shadow-xl lg:w-full"
+					class="bg-black/50 rounded-container-token shadow-xl"
 					src={CMS_IMG_BASE_URL + data.attributes.feature_img.data.attributes.url}
 					alt="thumbnail"
 				/>

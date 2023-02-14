@@ -19,7 +19,7 @@
 	<header class="space-y-4 flex justify-between items-center">
 		<div class="space-y-4">
 			<h1>The Blog</h1>
-			<p>Keep up with the latest news, tutorials and some other tech stories.</p>
+			<p class="font-medium">Keep up with the latest news, tutorials and some other tech stories.</p>
 		</div>
 		<a href="/blog/rss" class="btn" on:keypress>
 			<i class="fa-solid fa-square-rss text-xl mr-2" />
