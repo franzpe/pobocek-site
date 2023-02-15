@@ -37,7 +37,13 @@
 				& Web3 consultancy
 			</h1>
 			<div class="flex space-x-4">
-				<a class="btn bg-[#6e5494] text-white" href="https://github.com/franzpe" target="_blank" rel="noreferrer">
+				<a
+					class="btn bg-[#6e5494] text-white"
+					href="https://github.com/franzpe"
+					target="_blank"
+					rel="noreferrer"
+					aria-label="Check out github account"
+				>
 					<i class="fa-brands fa-github" />
 					<span class="hidden md:inline-block ml-2">Github</span>
 				</a>
@@ -46,11 +52,16 @@
 					href="https://linkedin.com/in/frantisek-pobocek-06819913b"
 					target="_blank"
 					rel="noreferrer"
+					aria-label="Check out linkedin account"
 				>
 					<i class="fa-brands fa-linkedin" />
 					<span class="hidden md:inline-block ml-2">Linkedin</span>
 				</a>
-				<a class="btn bg-gray-500 text-white" href="mailto:frank@pobocek.dev">
+				<a
+					class="btn bg-gray-500 text-white"
+					href="mailto:frank@pobocek.dev"
+					aria-label="Mail to frank@pobocek.sk"
+				>
 					<i class="fa-solid fa-mail-bulk" />
 					<span class="hidden md:inline-block ml-2">Email</span>
 				</a>
@@ -71,7 +82,7 @@
 						<article class="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-4 lg:gap-8 text-center md:text-left">
 							{#if project.feature_img.data !== null}
 								<img
-									class="bg-black/50 w-full lg:max-w-sm aspect-video rounded-container-token shadow-xl bg-cover bg-center"
+									class="bg-black/50 w-full lg:max-w-sm aspect-video object-cover rounded-container-token shadow-xl bg-cover bg-center"
 									src={CMS_IMG_BASE_URL + project.feature_img.data.attributes.url}
 									alt="thumbnail"
 								/>
@@ -144,12 +155,10 @@
 
 	.online span {
 		@apply bg-emerald-500;
-		/* box-shadow: 0 0 8px hsla(241, 100%, 100%); */
 	}
 
 	.offline span {
 		@apply bg-red-500;
-		/* box-shadow: 0 0 8px hsla(241, 100%, 100%); */
 	}
 
 	.status-text {

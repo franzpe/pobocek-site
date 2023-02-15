@@ -8,9 +8,14 @@
 	};
 </script>
 
-<button on:click={drawerOpen} class="btn-icon btn-icon-sm lg:!hidden">
+<button
+	id="hamburger-menu"
+	class="btn-icon btn-icon-sm lg:!hidden"
+	aria-label="Mobile menu button"
+	on:click={drawerOpen}
+>
 	<i class="fa-solid fa-bars text-xl" />
 </button>
-<a href="/" class="relative hidden sm:block">
+<a href="/" class="relative hidden sm:block" aria-label="Home logo link">
 	<Logo />
 </a>
