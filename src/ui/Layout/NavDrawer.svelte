@@ -30,7 +30,7 @@
 					<li on:click={onListItemClick} on:keypress>
 						<a href="/about" class={classesActive('/about')} data-sveltekit-preload-data="hover">
 							<span class="fa-solid fa-user text-lg w-10" />
-							Who am I?
+							About me
 						</a>
 					</li>
 					<li on:click={onListItemClick} on:keypress>
