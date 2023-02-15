@@ -1,8 +1,7 @@
 <div class="page-footer bg-surface-100-800-token text-xs md:text-base mx-auto px-4 py-8 md:p-10 space-y-10">
 	<section class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
 		<p class="text-xs">
-			Pobocek
-			<b>.dev</b>
+			<a href="/privacy">Privacy policy & cookies</a>
 		</p>
 		<div class="flex space-x-4">
 			<a class="btn bg-[#6e5494] text-white" href="https://github.com/franzpe" target="_blank" rel="noreferrer">
