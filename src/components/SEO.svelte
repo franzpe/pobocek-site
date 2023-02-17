@@ -8,9 +8,6 @@
 		image: 'https://pobocek.dev/avatar_circle_dark.png'
 	};
 
-	export let title = metaDefaults.title;
-	export let description = metaDefaults.description;
-
 	const meta = {
 		title: metaDefaults.title,
 		description: metaDefaults.description,
@@ -41,7 +38,7 @@
 
 		if (page.data.attributes) {
 			const post = page.data.attributes;
-			const articleTitleLeadText = `Pobocek Blog`;
+			const articleTitleLeadText = page.route.id === '/blog/[slug]' ? 'Pobocek Blog' : 'Pobocek Work';
 			// Post Data
 			meta.title = `${articleTitleLeadText} — ${post.meta_title || post.title}`;
 			meta.description = post.meta_description || post.description;
@@ -60,9 +57,9 @@
 
 <svelte:head>
 	<!-- Meta Tags -->
-	<title>{title}</title>
-	<meta name="title" content={title} />
-	<meta name="description" content={description} />
+	<title>{meta.title}</title>
+	<meta name="title" content={meta.title} />
+	<meta name="description" content={meta.description} />
 	<meta
 		name="keywords"
 		content="web development, web app, programming, freelance, web3, blockchain, smart contracts, ethereum, soroban, stellar"
