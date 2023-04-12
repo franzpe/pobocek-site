@@ -1,3 +1,20 @@
+@font-face {
+	font-family: 'Area';
+	font-weight: normal;
+	src: url('/static/fonts/area-normal-regular.otf');
+}
+
+@font-face {
+	font-family: 'Area';
+	font-weight: bold;
+	src: url('/static/fonts/area-normal-bold.otf');
+}
+
+:root {
+	--theme-font-family-base: 'Area', sans-serif;
+	--theme-font-family-heading: 'Area', sans-serif;
+}
+
 html,
 body {
 	@apply h-full overflow-hidden;
