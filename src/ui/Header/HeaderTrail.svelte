@@ -6,12 +6,12 @@
 </script>
 
 <Nav />
-<span class="divider-vertical h-5 relative hidden lg:block" />
+<span class="divider-vertical h-5 relative hidden lg:block " />
 <LightSwitch />
 <span class="divider-vertical h-5 {hide}" />
 <a href="/contact" class={hide}>Get in touch</a>
 <span class="divider-vertical h-5" />
-<section class="grid grid-cols-3 gap-6">
+<section class="grid grid-cols-3 gap-6 md:pr-4">
 	<a href="https://github.com/franzpe" target="_blank" rel="noreferrer" aria-label="Github">
 		<i class="fa-brands fa-github" />
 	</a>
