@@ -1,18 +1,22 @@
 @font-face {
 	font-family: 'Area';
 	font-weight: normal;
-	src: url('/static/fonts/area-normal-regular.otf');
+	src: url('/fonts/area-normal-regular.otf');
 }
 
 @font-face {
 	font-family: 'Area';
 	font-weight: bold;
-	src: url('/static/fonts/area-normal-bold.otf');
+	src: url('/fonts/area-normal-bold.otf');
 }
 
 :root {
 	--theme-font-family-base: 'Area', sans-serif;
 	--theme-font-family-heading: 'Area', sans-serif;
+}
+
+.text-token {
+	color: red !important;
 }
 
 html,
