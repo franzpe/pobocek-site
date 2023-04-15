@@ -1,22 +1,3 @@
-@font-face {
-	font-family: 'Area';
-	font-weight: normal;
-	src: url('/fonts/area-normal-regular.otf');
-}
-
-@font-face {
-	font-family: 'Area';
-	font-weight: bold;
-	src: url('/fonts/area-normal-bold.otf');
-}
-
-:root {
-	--theme-font-family-base: 'Area', sans-serif;
-	--theme-font-family-heading: 'Area', sans-serif;
-	/* --theme-font-color-base: #1a1a33; */
-	/* --theme-font-color-dark: #fffde9; */
-}
-
 .text-token {
 	color: red !important;
 }
