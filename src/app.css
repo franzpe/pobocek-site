@@ -1,3 +1,7 @@
+.text-token {
+	color: red !important;
+}
+
 html,
 body {
 	@apply h-full overflow-hidden;

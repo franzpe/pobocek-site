@@ -1,5 +1,6 @@
 <script lang="ts">
 	import '@skeletonlabs/skeleton/themes/theme-modern.css';
+  import '../styles/theme.css';
 	import '@skeletonlabs/skeleton/styles/all.css';
 	import '@fortawesome/fontawesome-free/css/all.css';
 	import 'highlight.js/styles/github-dark.css';
