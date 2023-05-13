@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { CMS_IMG_BASE_URL } from '$lib/http';
 
 	const metaDefaults = {
 		title: 'Pobocek - Web Development & Web3 Consultancy',
@@ -38,11 +39,12 @@
 
 		if (page.data.attributes) {
 			const post = page.data.attributes;
+      console.log(post);
 			const articleTitleLeadText = page.route.id === '/blog/[slug]' ? 'Pobocek Blog' : 'Pobocek Work';
 			// Post Data
 			meta.title = `${articleTitleLeadText} — ${post.meta_title || post.title}`;
 			meta.description = post.meta_description || post.description;
-			meta.image = post.feature_image;
+			meta.image = CMS_IMG_BASE_URL + post.feature_image.data.attributes.url;
 			// Article
 			meta.article.publishTime = post.publishedAt;
 			meta.article.modifiedTime = post.updatedAt;
