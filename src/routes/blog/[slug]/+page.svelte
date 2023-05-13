@@ -11,5 +11,5 @@
 		<li class="crumb-separator" aria-hidden>&rsaquo;</li>
 		<li>Article</li>
 	</ol>
-	<BlogArticle {data} />
+	<BlogArticle {data} hideFeature={true}/>
 </div>

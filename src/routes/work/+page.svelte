@@ -35,7 +35,7 @@
 					<div class="space-y-4">
 						<h2>{post.title}</h2>
 						<time class="block">{blogDateFormatter(post.createdAt)}</time>
-						<p>{post.description}</p>
+						<p class="font-normal">{post.description}</p>
 						{#if post.tags.data.length !== 0}
 							<div class="flex items-center space-x-4">
 								{#each post.tags.data as { attributes: tag }}

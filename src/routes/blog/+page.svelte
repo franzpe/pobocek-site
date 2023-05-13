@@ -48,7 +48,7 @@
 						<div class="space-y-4">
 							<time class="block">{blogDateFormatter(post.updatedAt)}</time>
 							<h2>{post.title}</h2>
-							<p>{post.description}</p>
+							<p class="font-normal">{post.description}</p>
 							<div class="flex items-center space-x-4">
 								{#each post.tags.data as { attributes: tag }}
 									<span class="chip !font-medium variant-glass-secondary">
