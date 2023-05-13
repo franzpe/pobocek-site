@@ -8,6 +8,7 @@
 	import highlightContent from '$lib/ highlightContent';
 
 	export let data: any;
+  export let hideFeature = false;
 
 	highlightContent();
 
@@ -31,7 +32,7 @@
 			</div>
 		</div>
 
-		{#if data.attributes.feature_img.data !== null}
+		{#if data.attributes.feature_img.data !== null && !hideFeature}
 			<img
 				src={CMS_IMG_BASE_URL + data.attributes.feature_img.data.attributes.url}
 				alt={data.attributes.title}

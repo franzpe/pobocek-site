@@ -91,7 +91,7 @@
 							<div class="space-y-4">
 								<h3>{project.title}</h3>
 								<time class="block">{blogDateFormatter(project.createdAt)}</time>
-								<p>{project.description}</p>
+								<p class="font-normal">{project.description}</p>
 								{#if project.tags.data.length !== 0}
 									<div class="flex items-center justify-center md:justify-start space-x-4">
 										{#each project.tags.data as { attributes: tag }}
