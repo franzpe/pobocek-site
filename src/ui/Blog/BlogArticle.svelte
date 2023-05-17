@@ -41,14 +41,32 @@
 		{/if}
 	</header>
 	<div class="blog-html space-y-4">{@html content}</div>
-	<footer class="card p-4 variant-glass-surface flex justify-between items-center mb-28">
 		{#if data.attributes.tags}
-			<div class="flex items-center space-x-4">
-				{#each data.attributes.tags.data as { attributes: tag }}
-					<span class="text-sm font-bold opacity-50 capitalize">{tag.name}</span>
-				{/each}
-			</div>
+      <div class="flex items-center space-x-4">
+        {#each data.attributes.tags.data as { attributes: tag }}
+          <span class="chip !font-medium variant-glass-secondary capitalize">{tag.name}</span>
+        {/each}
+      </div>
 		{/if}
+	<footer class="card p-4 variant-glass-surface flex justify-between items-center mb-28">
+		{#if data.attributes.type.data.attributes.name === 'blog' && data.attributes.tags}
+    <p class="">
+      🐱 Follow me for more dev shenanigans on 
+     	<a href="https://github.com/franzpe" target="_blank" rel="noreferrer" aria-label="Github" class="mx-2 text-2xl">
+  	  	<i class="fa-brands fa-github" />
+  	  </a>
+      or
+  	  <a
+		   href="https://linkedin.com/in/frantisek-pobocek-06819913b"
+		   target="_blank"
+		   rel="noreferrer"
+		   aria-label="Linkedin"
+       class="mx-2 text-2xl"
+	    >
+	    	<i class="fa-brands fa-linkedin" />
+	    </a>
+    </p> 
+    {/if}
 		<!-- prettier-ignore -->
 		<button class="btn variant-ghost-surface" on:click={()=>{scrollToTop()}}>Scroll to Top &uarr;</button>
 	</footer>
